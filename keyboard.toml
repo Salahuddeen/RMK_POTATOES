@@ -68,7 +68,7 @@ Q      W      E      R      T      Y      U      I      O      P      A      B
 C      D      F      G      H      J      K      L      M      N      O      P
 Z      X      C      V      B      N      Q      W      E      R      T      Y
 A      S      D      F      G      H      J      K      L      Comma  Dot    Slash
-Space  Enter  Tab    Backspace LCtrl  MO(1)  Space  Enter  Tab    Backspace LAlt   LShift
+Space  Enter  Tab    Backspace LCtrl      P      Space  Enter  Tab    Backspace LAlt   LShift
 """
 
 [[keymap.layer]]

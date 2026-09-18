@@ -67,7 +67,7 @@ layers = 3
 keys = """
 Kc1       Kc2          Kc3          Kc4          Kc5          Kc6     Kc7     Kc8          Kc9          Kc0          Minus          Equal
 LCtrl     Q            W            E            R            T       Y       U            I            O            P              BackSpace
-LShift    Mt(lgui,A)   Mt(lalt,S)   Mt(lctrl,D)  Mt(lshift,F) G       H       Mt(rshift,J) Mt(rctrl,K)  Mt(ralt,L)   Mt(rgui,Semicolon) CpiInc
+LShift    Mt(gui,A)    Mt(alt,S)    Mt(ctrl,D)   Mt(shift,F)  G       H       Mt(shift,J)  Mt(ctrl,K)   Mt(alt,L)    Mt(gui,Semicolon) CpiInc
 LGui      Z            X            C            V            B       N       M            Comma        Dot          Slash          CpiDec
 __        Lt(1,Space)  Lt(2,Enter)  Tab          Mb1          Mb2     LShift  BackSpace    Enter        __           __             TrackballScroll
 """

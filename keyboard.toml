@@ -41,7 +41,7 @@ smart_mode = true
 # swap_xy = true
 
 [keymap]
-layers = 2
+layers = 3
 
 [[keymap.layer]]
 keys = """
@@ -50,6 +50,15 @@ A      S      D      F      G
 Z      X      C      V      B
 N      M      Comma  Dot    Slash
 Space  Enter  Tab    BSpace MO(1)
+"""
+
+[[keymap.layer]]
+keys = """
+_  _  _  _  _
+_  _  _  _  _
+_  _  _  _  _
+_  _  _  _  _
+_  _  _  _  _
 """
 
 [[keymap.layer]]

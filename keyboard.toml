@@ -1,4 +1,3 @@
-```toml
 [keyboard]
 name = "RMK Charybdis Split"
 product_name = "Charybdis Split"
@@ -155,4 +154,3 @@ __        Exclaim      At           Hash         Dollar       Percent Caret   Am
 __        __           __           __           __           __      Mute    VolDown      VolUp        Play         __             __
 __        __           __           __           MouseBtn1    MouseBtn2 __      __           __           __           __             __
 """
-```

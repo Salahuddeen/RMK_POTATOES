@@ -64,9 +64,9 @@ layers = 1
 
 [[keymap.layer]]
 keys = """
-1 2 3 4 5 6 7 8 9 0 Minus Equal
-Q W E R T Y U I O P LBracket RBracket
-A S D F G H J K L Semicolon Quote Backslash
-Z X C V B N M Comma Dot Slash Grave Apostrophe
 A B C D E F G H I J K L
+M N O P Q R S T U V W X
+Y Z A B C D E F G H I J
+K L M N O P Q R S T U V
+W X Y Z A B C D E F G H
 """

@@ -46,7 +46,9 @@ Connect each row and column wire from your right-half matrix to the correspondin
 
 ## Moving to full split later
 
-When right-half bring-up is confirmed, migrate this config to split sections:
+When right-half bring-up is confirmed, migrate this config to split sections.
+
+This is schematic guidance only and may vary by RMK version; verify exact section names/fields against the RMK split keyboard and PMW3610 docs for your target RMK release.
 
 - matrix config into `[[split.peripheral]]` + `[split.peripheral.matrix]`
 - PMW3610 config into `[[split.peripheral.input_device.pmw3610]]`

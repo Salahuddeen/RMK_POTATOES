@@ -52,7 +52,8 @@ jobs:
           vial_rows = vial['layouts']['keymap']
           assert len(vial_rows) == rows, f"vial keymap rows {len(vial_rows)} != layout rows {rows}"
           for r_i, row in enumerate(vial_rows):
-              assert len(row) == cols, f"vial keymap row {r_i} cols {len(row)} != layout cols {cols}"
+              key_positions = [item for item in row if isinstance(item, str)]
+              assert len(key_positions) == cols, f"vial keymap row {r_i} key positions {len(key_positions)} != layout cols {cols}"
 
           print('Config consistency checks passed')
           PY

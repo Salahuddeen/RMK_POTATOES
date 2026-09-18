@@ -38,6 +38,12 @@ Connect each row and column wire from your right-half matrix to the correspondin
 6. Copy the `.uf2` file to that drive.
 7. Board reboots with the new firmware.
 
+
+## RMK reference used for this config
+
+This repo builds with `rmk-rs/rmk/.github/workflows/user_build.yml@main` (see `.github/workflows/build.yml`).
+The PMW3610 and split section names in this guide were validated against RMK docs on `rmk-rs/rmk` main (split_keyboard.md and input_device/pmw3610.mdx).
+
 ## Validation checklist
 
 - Press keys on the right half and confirm key events are generated.

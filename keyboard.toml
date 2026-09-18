@@ -29,7 +29,7 @@ map = """
 name = "right_trackball"
 id = 1
 # PMW3610 uses single-wire half-duplex SDIO, so MOSI and MISO must be the same pin.
-spi = { instance = "bitbang0", sck = "PIN_3", mosi = "PIN_2", miso = "PIN_2", cs = "PIN_4" } # PMW3610 SDIO: mosi and miso must stay identical
+spi = { instance = "bitbang0", sck = "PIN_3", mosi = "PIN_2", miso = "", cs = "PIN_4" } # PMW3610 SDIO half-duplex: one data line, leave miso empty
 motion = "PIN_5"
 report_hz = 125
 cpi = 800

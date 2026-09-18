@@ -42,7 +42,7 @@ smart_mode = true
 
 [keymap]
 # Bring-up keymap intentionally resets the template key actions for right-half hardware testing.
-layers = 3
+layers = 1
 
 [[keymap.layer]]
 keys = """
@@ -50,7 +50,7 @@ Q      W      E      R      T      Y
 A      S      D      F      G      H
 Z      X      C      V      B      N
 N      M      J      K      L      O
-Space  Enter  Tab    Backspace LCtrl  MO(1)
+Z      X      K      T      E      M
 """
 
 [[keymap.layer]]

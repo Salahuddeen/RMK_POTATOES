@@ -50,7 +50,7 @@ Q      W      E      R      T
 A      S      D      F      G
 Z      X      C      V      B
 N      M      Comma  Dot    Slash
-Space  Enter  Tab    BSpace MO(1)
+Space  Enter  Tab    Backspace MO(1)
 """
 
 [[keymap.layer]]

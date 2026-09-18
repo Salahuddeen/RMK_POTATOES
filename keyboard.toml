@@ -1,46 +1,60 @@
 # Documentation: https://rmk.rs/docs/configuration/
 [keyboard]
-name = "RMK Keyboard"
-product_name = "RMK Keyboard"
+name = "RMK Charybdis Right Test"
+product_name = "Charybdis Right Test"
 vendor_id = 0x4c4b
 product_id = 0x4643
-manufacturer = "RMK"
+manufacturer = "Salahuddeen"
 chip = "rp2040"
 
+# Right-half bring-up profile (standalone) for Waveshare RP2040.
 [matrix]
-# Row and col pins are mandatory
-row_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9"]
-col_pins = ["PIN_19", "PIN_20", "PIN_21"]
-# RMK uses col2row as the default matrix diode direction, if you want to use a row2col matrix, add `row2col = true`
+row_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9", "PIN_10"]
+col_pins = ["PIN_11", "PIN_12", "PIN_13", "PIN_14", "PIN_15"]
+# RMK default matrix diode direction is col2row.
 # row2col = true
 
 [layout]
-rows = 4
-cols = 3
+rows = 5
+cols = 5
 map = """
-(0,0)  (0,1)  (0,2)
-(1,0)  (1,1)  (1,2)
-(2,0)  (2,1)  (2,2)
-(3,0)  (3,1)  (3,2)
+(0,0)  (0,1)  (0,2)  (0,3)  (0,4)
+(1,0)  (1,1)  (1,2)  (1,3)  (1,4)
+(2,0)  (2,1)  (2,2)  (2,3)  (2,4)
+(3,0)  (3,1)  (3,2)  (3,3)  (3,4)
+(4,0)  (4,1)  (4,2)  (4,3)  (4,4)
 """
+
+[[input_device.pmw3610]]
+name = "right_trackball"
+id = 1
+spi = { instance = "bitbang0", sck = "PIN_3", mosi = "PIN_2", miso = "PIN_2", cs = "PIN_4" }
+motion = "PIN_5"
+report_hz = 125
+cpi = 800
+smart_mode = true
+# Set these if trackball direction feels inverted:
+# invert_x = true
+# invert_y = true
+# swap_xy = true
 
 [keymap]
-# One more layer than is defined below: the keymap references layer 2
-# (LT(2, ...), TG(2)), which stays empty until the user fills it in.
-layers = 3
+layers = 2
 
-[[keymap.layer]] # layer 0
+[[keymap.layer]]
 keys = """
-A       B           C
-Kc1     Kc2         Kc3
-LCtrl   MO(1)       LShift
-OSL(1)  LT(2, Kc9)  LM(1, LShift | LGui)
+Q      W      E      R      T
+A      S      D      F      G
+Z      X      C      V      B
+N      M      Comma  Dot    Slash
+Space  Enter  Tab    BSpace Esc
 """
 
-[[keymap.layer]] # layer 1
+[[keymap.layer]]
 keys = """
-_  TT(1)  TG(2)
-_  _      _
-_  _      _
-_  _      _
+_  _  _  _  _
+_  _  _  _  _
+_  _  _  _  _
+_  _  _  _  _
+_  _  _  _  _
 """

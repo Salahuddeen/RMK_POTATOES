@@ -55,11 +55,11 @@ jobs:
               key_positions = [item for item in row if isinstance(item, str)]
               assert len(key_positions) == cols, f"vial keymap row {r_i} key positions {len(key_positions)} != layout cols {cols}"
 
-          # Regression check derived from repository data: insert metadata objects into a real key row.
-          sample_row = [item for item in vial_rows[0] if isinstance(item, str)]
-          mixed_row = [{"x": 0.5}, *sample_row[:2], {"y": 0.25}, *sample_row[2:]]
-          mixed_positions = [item for item in mixed_row if isinstance(item, str)]
-          assert len(mixed_positions) == cols, "mixed metadata+key row counting failed"
+          # Regression check against repository data: ensure at least one real row carries metadata objects.
+          metadata_rows = [row for row in vial_rows if any(not isinstance(item, str) for item in row)]
+          assert metadata_rows, "expected at least one metadata-bearing row in vial.json"
+          metadata_key_positions = [item for item in metadata_rows[0] if isinstance(item, str)]
+          assert len(metadata_key_positions) == cols, "metadata row key-position counting failed"
 
           print('Config consistency checks passed')
           PY

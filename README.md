@@ -4,7 +4,7 @@ This repository is configured to test **only the right half** (including the PMW
 
 ## Current firmware scope
 
-- Right-side matrix only (5x5 test matrix)
+- Right-side matrix only (5x6 test matrix)
 - PMW3610 trackball enabled
 - Standalone bring-up profile (not split transport yet)
 
@@ -15,7 +15,7 @@ Use this mapping exactly, or update `keyboard.toml` to match your real wiring.
 ### Matrix wiring (right side)
 
 - `row_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9", "PIN_10"]`
-- `col_pins = ["PIN_11", "PIN_12", "PIN_13", "PIN_14", "PIN_15"]`
+- `col_pins = ["PIN_11", "PIN_12", "PIN_13", "PIN_14", "PIN_15", "PIN_16"]`
 
 Connect each row and column wire from your right-half matrix to the corresponding RP2040 GPIO pin.
 

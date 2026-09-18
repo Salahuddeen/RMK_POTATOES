@@ -10,7 +10,7 @@ chip = "rp2040"
 # Right-half bring-up profile (standalone) for Waveshare RP2040.
 [matrix]
 row_pins = ["PIN_6", "PIN_7", "PIN_8", "PIN_9", "PIN_10"]
-col_pins = ["PIN_11", "PIN_12", "PIN_13", "PIN_14", "PIN_15", "PIN_16"]
+col_pins = ["PIN_11", "PIN_12", "PIN_13", "PIN_14", "PIN_15", "PIN_26"]
 # RMK default matrix diode direction is col2row.
 row2col = true
 

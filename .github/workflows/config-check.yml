@@ -55,6 +55,15 @@ jobs:
               key_positions = [item for item in row if isinstance(item, str)]
               assert len(key_positions) == cols, f"vial keymap row {r_i} key positions {len(key_positions)} != layout cols {cols}"
 
+          expected_positions = {f"{r},{c}" for r in range(rows) for c in range(cols)}
+          actual_positions = []
+          for row in vial_rows:
+              actual_positions.extend(item for item in row if isinstance(item, str))
+
+          assert len(actual_positions) == rows * cols, f"vial key positions count {len(actual_positions)} != expected {rows * cols}"
+          assert len(set(actual_positions)) == len(actual_positions), "vial key positions contain duplicates"
+          assert set(actual_positions) == expected_positions, "vial key positions do not match keyboard.toml layout coordinates"
+
 
           print('Config consistency checks passed')
           PY

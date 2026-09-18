@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    uses: rmk-rs/rmk/.github/workflows/user_build.yml@main
+    uses: rmk-rs/rmk/.github/workflows/user_build.yml@5e9c703b6c0738696788a704486d3bdba8aba4d5
     with:
       keyboard_toml_path: "keyboard.toml"
       vial_json_path: "vial.json"

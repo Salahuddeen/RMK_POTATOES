@@ -29,7 +29,7 @@ map = """
 name = "right_trackball"
 id = 1
 # PMW3610 uses single-wire half-duplex SDIO. This single-data-line SPI form follows RMK PMW3610 keyboard.toml docs.
-spi = { instance = "bitbang0", sck = "PIN_3", mosi = "PIN_2", cs = "PIN_4" } # PMW3610 SDIO half-duplex: single data line on PIN_2
+spi = { instance = "bitbang0", sck = "PIN_3", mosi = "PIN_2", cs = "PIN_4" } # RMK PMW3610 SDIO form: data line is configured via mosi only; keep miso unset
 motion = "PIN_5"
 report_hz = 125
 cpi = 800

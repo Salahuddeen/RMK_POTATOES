@@ -41,8 +41,8 @@ Connect each row and column wire from your right-half matrix to the correspondin
 
 ## RMK reference used for this config
 
-This repo builds with `rmk-rs/rmk/.github/workflows/user_build.yml@main` (see `.github/workflows/build.yml`).
-The PMW3610 and split section names in this guide were validated against RMK docs at commit `5e9c703b6c0738696788a704486d3bdba8aba4d5` (`split_keyboard.md` and `input_device/pmw3610.mdx`).
+This repo builds with `rmk-rs/rmk/.github/workflows/user_build.yml@5e9c703b6c0738696788a704486d3bdba8aba4d5` (see `.github/workflows/build.yml`).
+The PMW3610 and split section names in this guide were validated against RMK docs from the same commit (`split_keyboard.md` and `input_device/pmw3610.mdx`).
 
 ## Validation checklist
 

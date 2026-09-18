@@ -1,4 +1,6 @@
 # Documentation: https://rmk.rs/docs/configuration/
+# Miryoku (Colemak-DH) on a 5x12 Charybdis: 3x5 alphas + 3 thumbs per side,
+# with the extra number row, outer columns, and trackball mouse buttons kept.
 [keyboard]
 name = "RMK Charybdis Split"
 product_name = "Charybdis Split"
@@ -21,7 +23,7 @@ serial = [
 
 [split.central.matrix]
 row_pins = ["PIN_11", "PIN_12", "PIN_13", "PIN_14", "PIN_15"]
-col_pins = ["PIN_10", "PIN_9", "PIN_8", "PIN_7", "PIN_6", "PIN_5"]
+col_pins = ["PIN_5", "PIN_6", "PIN_7", "PIN_8", "PIN_9", "PIN_10"]
 row2col = true
 
 [[split.peripheral]]
@@ -35,7 +37,7 @@ serial = [
 
 [split.peripheral.matrix]
 row_pins = ["PIN_11", "PIN_12", "PIN_13", "PIN_14", "PIN_15"]
-col_pins = ["PIN_10", "PIN_9", "PIN_8", "PIN_7", "PIN_6", "PIN_5"]
+col_pins = ["PIN_5", "PIN_6", "PIN_7", "PIN_8", "PIN_9", "PIN_10"]
 row2col = true
 
 [[split.peripheral.input_device.pmw3610]]
@@ -51,42 +53,115 @@ smart_mode = true
 rows = 5
 cols = 12
 map = """
-(0,0)  (0,1)  (0,2)  (0,3)  (0,4)  (0,5)  (0,6)  (0,7)  (0,8)  (0,9)  (0,10) (0,11)
-(1,0)  (1,1)  (1,2)  (1,3)  (1,4)  (1,5)  (1,6)  (1,7)  (1,8)  (1,9)  (1,10) (1,11)
-(2,0)  (2,1)  (2,2)  (2,3)  (2,4)  (2,5)  (2,6)  (2,7)  (2,8)  (2,9)  (2,10) (2,11)
-(3,0)  (3,1)  (3,2)  (3,3)  (3,4)  (3,5)  (3,6)  (3,7)  (3,8)  (3,9)  (3,10) (3,11)
-(4,0)  (4,1)  (4,2)  (4,3)  (4,4)  (4,5)  (4,6)  (4,7)  (4,8)  (4,9)  (4,10) (4,11)
+(0,0,L) (0,1,L) (0,2,L) (0,3,L) (0,4,L) (0,5,L) [1] (0,6,R) (0,7,R) (0,8,R) (0,9,R) (0,10,R) (0,11,R)
+(1,0,L) (1,1,L) (1,2,L) (1,3,L) (1,4,L) (1,5,L) [1] (1,6,R) (1,7,R) (1,8,R) (1,9,R) (1,10,R) (1,11,R)
+(2,0,L) (2,1,L) (2,2,L) (2,3,L) (2,4,L) (2,5,L) [1] (2,6,R) (2,7,R) (2,8,R) (2,9,R) (2,10,R) (2,11,R)
+(3,0,L) (3,1,L) (3,2,L) (3,3,L) (3,4,L) (3,5,L) [1] (3,6,R) (3,7,R) (3,8,R) (3,9,R) (3,10,R) (3,11,R)
+(4,0,L) (4,1,L) (4,2,L) (4,3,L) (4,4,L) (4,5,L) [1] (4,6,R) (4,7,R) (4,8,R) (4,9,R) (4,10,R) (4,11,R)
 """
 
 [keymap]
-layers = 3
+layers = 7
 
-# Layer 0: Base Alpha + Number Row + Home Row Mods + Custom Rightmost Trackball/Utility Column
+[aliases]
+URedo = "WM(Y,LCtrl)"
+UPaste = "WM(V,LCtrl)"
+UCopy = "WM(C,LCtrl)"
+UCut = "WM(X,LCtrl)"
+UUndo = "WM(Z,LCtrl)"
+
+# Layer 0: Miryoku Base (Colemak-DH) + GACS home-row mods
+# Extra: traditional number row, left Esc/Tab/Shift/Ctrl, right-of-quote Backspace
 [[keymap.layer]]
+name = "base"
 keys = """
-Kc1       Kc2            Kc3            Kc4            Kc5            Kc6     Kc7     Kc8            Kc9            Kc0            Minus          Equal
-LCtrl     Q              W              E              R              T       Y       U              I              O              P              BackSpace
-LShift    MT(LGui, A)    MT(LAlt, S)    MT(LCtrl, D)   MT(LShift, F)  G       H       MT(RShift, J)  MT(RCtrl, K)   MT(RAlt, L)    MT(RGui, Semicolon) CpiInc
-LGui      Z              X              C              V              B       N       M              Comma          Dot            Slash          CpiDec
-__        LT(1, Space)   LT(2, Enter)   Tab            Mb1            Mb2     LShift  BackSpace      Enter          __             __             TrackballScroll
+Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 Minus Equal
+Escape Q W F P B J L U Y Quote BackSpace
+Tab MT(A,LGui,HRM) MT(R,LAlt,HRM) MT(S,LCtrl,HRM) MT(T,LShift,HRM) G M MT(N,RShift,HRM) MT(E,RCtrl,HRM) MT(I,RAlt,HRM) MT(O,RGui,HRM) No
+LShift Z X C D V K H Comma Dot Slash No
+LCtrl LT(media,Escape,FH) LT(nav,Space,FH) LT(mouse,Tab,FH) MouseBtn1 MouseBtn2 LT(sym,Enter,FH) LT(num,Backspace,FH) LT(fun,Delete,FH) No No No
 """
 
-# Layer 1: Navigation, Arrow Keys, and Mouse Utility
+# Layer 1: Miryoku Nav
 [[keymap.layer]]
+name = "nav"
 keys = """
-F1        F2             F3             F4             F5             F6      F7      F8             F9             F10            F11            F12
-__        __             __             __             __             __      Home    PgDown         PgUp           End            __             __
-__        LCtrl          LAlt           LGui           LShift         __      Left    Down           Up             Right          __             __
-Escape    Undo           Cut            Copy           Paste          __      __      __             __             __             __             __
-__        __             __             __             Mb1            Mb2     __      Delete         __             __             __             __
+_ _ _ _ _ _ _ _ _ _ _ _
+_ Bootloader Reboot No No @URedo @UPaste @UCopy @UCut @UUndo No _
+_ LGui LAlt LCtrl LShift CapsWordToggle Left Down Up Right CapsWordToggle No
+_ No No No No No Insert Home PageDown PageUp End No
+_ _ _ _ _ _ Enter Backspace Delete No No No
 """
 
-# Layer 2: Extended Symbols & Media Controls
+# Layer 2: Miryoku Mouse (also auto-activated by the trackball)
 [[keymap.layer]]
+name = "mouse"
 keys = """
-Grave     __             __             __             __             __      __      __             __             __             __             __
-__        LBracket       RBracket       LCbr           RCbr           __      __      __             __             __             __             __
-__        Exclaim        At             Hash           Dollar         Percent Caret   Ampersand      Asterisk       LParen         RParen         __
-__        __             __             __             __             __      Mute    VolDown        VolUp          Play           __             __
-__        __             __             __             Mb1            Mb2     __      __             __             __             __             __
+_ _ _ _ _ _ _ _ _ _ _ _
+_ No No No No No @URedo @UPaste @UCopy @UCut @UUndo _
+_ LGui LAlt LCtrl LShift No MouseLeft MouseDown MouseUp MouseRight No No
+_ No No No No No MouseWheelLeft MouseWheelDown MouseWheelUp MouseWheelRight No No
+_ _ _ _ _ _ MouseBtn1 MouseBtn3 MouseBtn2 No No No
 """
+
+# Layer 3: Miryoku Media
+[[keymap.layer]]
+name = "media"
+keys = """
+_ _ _ _ _ _ _ _ _ _ _ _
+_ No No No No No No No No No No _
+_ LGui LAlt LCtrl LShift No MediaPrevTrack AudioVolDown AudioVolUp MediaNextTrack No No
+_ No No No No No No BrightnessDown BrightnessUp No No No
+_ _ _ _ _ _ MediaStop MediaPlayPause AudioMute No No No
+"""
+
+# Layer 4: Miryoku Num
+[[keymap.layer]]
+name = "num"
+keys = """
+_ _ _ _ _ _ _ _ _ _ _ _
+_ LeftBracket Kc7 Kc8 Kc9 RightBracket No No No No Bootloader _
+_ Semicolon Kc4 Kc5 Kc6 Equal No RShift RCtrl RAlt RGui No
+_ Grave Kc1 Kc2 Kc3 Backslash No No No No Reboot No
+_ Dot Kc0 Minus _ _ _ _ _ No No No
+"""
+
+# Layer 5: Miryoku Sym
+[[keymap.layer]]
+name = "sym"
+keys = """
+_ _ _ _ _ _ _ _ _ _ _ _
+_ SHIFTED(LeftBracket) SHIFTED(Kc7) SHIFTED(Kc8) SHIFTED(RightBracket) SHIFTED(Kc9) No No No No No _
+_ SHIFTED(Semicolon) SHIFTED(Kc4) SHIFTED(Kc5) SHIFTED(Kc6) SHIFTED(Equal) No RShift RCtrl RAlt RGui No
+_ SHIFTED(Grave) SHIFTED(Kc1) SHIFTED(Kc2) SHIFTED(Kc3) SHIFTED(Backslash) No No No No No No
+_ SHIFTED(Kc9) SHIFTED(Kc0) SHIFTED(Minus) _ _ _ _ _ No No No
+"""
+
+# Layer 6: Miryoku Fun
+[[keymap.layer]]
+name = "fun"
+keys = """
+_ _ _ _ _ _ _ _ _ _ _ _
+_ F12 F7 F8 F9 PrintScreen No No No No Bootloader _
+_ F11 F4 F5 F6 ScrollLock No No No No No No
+_ F10 F1 F2 F3 Pause No No No No Reboot No
+_ Application Space Tab _ _ _ _ _ No No No
+"""
+
+# Home-row mods and thumb hold-taps. See https://rmk.rs/docs/configuration/behavior
+[behavior.morse]
+enable_flow_tap = true
+prior_idle_time = "120ms"
+hold_timeout = "250ms"
+gap_timeout = "250ms"
+
+[behavior.morse.profiles]
+HRM = { unilateral_tap = true, permissive_hold = true, hold_timeout = "250ms", gap_timeout = "250ms" }
+FH = { hold_on_other_press = true, unilateral_tap = false, hold_timeout = "200ms", gap_timeout = "200ms" }
+
+# Trackball motion raises the Mouse layer. See https://rmk.rs/docs/configuration/behavior
+[[behavior.auto_mouse_layer]]
+device_id = 1
+target_layer = 2
+timeout = "600ms"
+threshold = 2

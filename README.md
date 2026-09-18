@@ -10,7 +10,7 @@ This repository is configured to test **only the right half** (including the PMW
 
 ## Wiring
 
-Use this mapping exactly, or update `/home/runner/work/RMK_POTATOES/RMK_POTATOES/keyboard.toml` to match your real wiring.
+Use this mapping exactly, or update `keyboard.toml` to match your real wiring.
 
 ### Matrix wiring (right side)
 

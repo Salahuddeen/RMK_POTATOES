@@ -41,6 +41,7 @@ smart_mode = true
 # swap_xy = true
 
 [keymap]
+# Bring-up keymap intentionally resets the template key actions for right-half hardware testing.
 layers = 3
 
 [[keymap.layer]]

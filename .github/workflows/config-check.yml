@@ -55,5 +55,10 @@ jobs:
               key_positions = [item for item in row if isinstance(item, str)]
               assert len(key_positions) == cols, f"vial keymap row {r_i} key positions {len(key_positions)} != layout cols {cols}"
 
+          # Regression check: mixed Vial row metadata objects + key positions.
+          mixed_row = [{"x": 0.5}, "0,0", "0,1", {"y": 0.25}, "0,2", "0,3", "0,4"]
+          mixed_positions = [item for item in mixed_row if isinstance(item, str)]
+          assert len(mixed_positions) == cols, "mixed metadata+key row counting failed"
+
           print('Config consistency checks passed')
           PY

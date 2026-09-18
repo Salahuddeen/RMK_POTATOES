@@ -56,6 +56,6 @@ When right-half bring-up is confirmed, migrate this config to split sections.
 
 This is schematic guidance only; verify exact section names/fields against the RMK docs for your target release (this guide was checked against commit `5e9c703b6c0738696788a704486d3bdba8aba4d5`).
 
-- matrix config into `[[split.peripheral]]` + `[split.peripheral.matrix]`
-- PMW3610 config into `[[split.peripheral.input_device.pmw3610]]`
+- matrix config into `[[split.peripheral]]` + `[split.peripheral.matrix]` (confirmed in pinned `split_keyboard.md`)
+- PMW3610 config into `[[split.peripheral.input_device.pmw3610]]` (confirmed in pinned `input_device/pmw3610.mdx`)
 - add split transport config (`serial` or `ble`) for both halves

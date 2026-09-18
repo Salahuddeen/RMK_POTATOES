@@ -55,11 +55,6 @@ jobs:
               key_positions = [item for item in row if isinstance(item, str)]
               assert len(key_positions) == cols, f"vial keymap row {r_i} key positions {len(key_positions)} != layout cols {cols}"
 
-          # If metadata objects are present in Vial rows, ensure key-position counting still matches cols.
-          metadata_rows = [row for row in vial_rows if any(not isinstance(item, str) for item in row)]
-          for i, metadata_row in enumerate(metadata_rows):
-              metadata_key_positions = [item for item in metadata_row if isinstance(item, str)]
-              assert len(metadata_key_positions) == cols, f"metadata row {i} key-position counting failed"
 
           print('Config consistency checks passed')
           PY

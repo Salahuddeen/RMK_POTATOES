@@ -42,7 +42,7 @@ Connect each row and column wire from your right-half matrix to the correspondin
 ## RMK reference used for this config
 
 This repo builds with `rmk-rs/rmk/.github/workflows/user_build.yml@main` (see `.github/workflows/build.yml`).
-The PMW3610 and split section names in this guide were validated against RMK docs on `rmk-rs/rmk` main (split_keyboard.md and input_device/pmw3610.mdx).
+The PMW3610 and split section names in this guide were validated against RMK docs at commit `5e9c703b6c0738696788a704486d3bdba8aba4d5` (`split_keyboard.md` and `input_device/pmw3610.mdx`).
 
 ## Validation checklist
 
@@ -54,7 +54,7 @@ The PMW3610 and split section names in this guide were validated against RMK doc
 
 When right-half bring-up is confirmed, migrate this config to split sections.
 
-This is schematic guidance only and may vary by RMK version; verify exact section names/fields against the RMK split keyboard and PMW3610 docs for your target RMK release.
+This is schematic guidance only; verify exact section names/fields against the RMK docs for your target release (this guide was checked against commit `5e9c703b6c0738696788a704486d3bdba8aba4d5`).
 
 - matrix config into `[[split.peripheral]]` + `[split.peripheral.matrix]`
 - PMW3610 config into `[[split.peripheral.input_device.pmw3610]]`

@@ -48,7 +48,7 @@ report_hz = 125
 cpi = 800
 smart_mode = true
 
-[hold_tap]
+[behavior.hold_tap]
 tapping_term = 180
 quick_tap = true
 

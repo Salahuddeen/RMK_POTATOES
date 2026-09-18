@@ -48,6 +48,12 @@ report_hz = 125
 cpi = 800
 smart_mode = true
 
+[hold_tap]
+# 180ms window to separate tap vs hold
+tapping_term = 180
+# Rapid double-tap-and-hold triggers auto-repeat on the tapped key
+quick_tap = true
+
 [layout]
 rows = 5
 cols = 12
@@ -60,13 +66,34 @@ map = """
 """
 
 [keymap]
-layers = 1
+layers = 3
 
+# Layer 0: Base Alpha + Number Row + Home Row Mods + Custom Rightmost Trackball/Utility Column
 [[keymap.layer]]
 keys = """
-A B C D E F G H I J K L
-M N O P Q R S T U V W X
-Y Z A B C D E F G H I J
-K L M N O P Q R S T U V
-W X Y Z A B C D E F G H
+Kc1       Kc2          Kc3          Kc4          Kc5          Kc6     Kc7     Kc8          Kc9          Kc0          Minus          Equal
+LCtrl     Q            W            E            R            T       Y       U            I            O            P              BackSpace
+LShift    Mt(LGui,A)   Mt(LAlt,S)   Mt(LCtrl,D)  Mt(LShift,F) G       H       Mt(RShift,J) Mt(RCtrl,K)  Mt(RAlt,L)   Mt(RGui,Semicolon) CpiInc
+LGui      Z            X            C            V            B       N       M            Comma        Dot          Slash          CpiDec
+__        Lt(1, Space) Lt(2, Enter) Tab          Mb1          Mb2     LShift  BackSpace    Enter        __           __             TrackballScroll
+"""
+
+# Layer 1: Navigation, Arrow Keys, and Mouse Utility
+[[keymap.layer]]
+keys = """
+F1        F2           F3           F4           F5           F6      F7      F8           F9           F10          F11            F12
+__        __           __           __           __           __      Home    PgDown       PgUp         End          __             __
+__        LCtrl        LAlt         LGui         LShift       __      Left    Down         Up           Right        __             __
+Escape    Undo         Cut          Copy         Paste        __      __      __           __           __           __             __
+__        __           __           __           Mb1          Mb2     __      Delete       __           __           __             __
+"""
+
+# Layer 2: Extended Symbols & Media Controls
+[[keymap.layer]]
+keys = """
+Grave     __           __           __           __           __      __      __           __           __           __             __
+__        LBracket     RBracket     LCbr         RCbr         __      __      __           __           __           __             __
+__        Exclaim      At           Hash         Dollar       Percent Caret   Ampersand    Asterisk     LParen       RParen         __
+__        __           __           __           __           __      Mute    VolDown      VolUp        Play         __             __
+__        __           __           __           Mb1          Mb2     __      __           __           __           __             __
 """

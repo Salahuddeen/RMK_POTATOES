@@ -1,0 +1,58 @@
+name: Validate keyboard config
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "keyboard.toml"
+      - "vial.json"
+      - ".github/workflows/config-check.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate keyboard.toml and vial.json consistency
+        run: |
+          python - <<'PY'
+          import json, tomllib
+          from pathlib import Path
+
+          root = Path('.')
+          with open(root / 'keyboard.toml', 'rb') as f:
+              cfg = tomllib.load(f)
+          with open(root / 'vial.json', 'r', encoding='utf-8') as f:
+              vial = json.load(f)
+
+          layout = cfg['layout']
+          rows = layout['rows']
+          cols = layout['cols']
+
+          keymap_layers = cfg['keymap']['layers']
+          layers = cfg['keymap']['layer']
+          assert len(layers) == keymap_layers, f"keymap.layers={keymap_layers}, but found {len(layers)} layer blocks"
+
+          for idx, layer in enumerate(layers):
+              keys_rows = [r for r in (line.strip() for line in layer['keys'].strip().splitlines()) if r]
+              assert len(keys_rows) == rows, f"Layer {idx}: expected {rows} rows, got {len(keys_rows)}"
+              for r_i, r in enumerate(keys_rows):
+                  key_count = len(r.split())
+                  assert key_count == cols, f"Layer {idx} row {r_i}: expected {cols} cols, got {key_count}"
+
+          matrix = vial['matrix']
+          assert matrix['rows'] == rows, f"vial.json matrix rows {matrix['rows']} != keyboard.toml layout rows {rows}"
+          assert matrix['cols'] == cols, f"vial.json matrix cols {matrix['cols']} != keyboard.toml layout cols {cols}"
+
+          vial_rows = vial['layouts']['keymap']
+          assert len(vial_rows) == rows, f"vial keymap rows {len(vial_rows)} != layout rows {rows}"
+          for r_i, row in enumerate(vial_rows):
+              assert len(row) == cols, f"vial keymap row {r_i} cols {len(row)} != layout cols {cols}"
+
+          print('Config consistency checks passed')
+          PY

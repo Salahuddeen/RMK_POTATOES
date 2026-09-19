@@ -11,6 +11,8 @@ This repository is configured for a **full split build** with two RP2040 Zero co
 - 5x6 matrix per side (total layout 5x12)
 - Trackball enabled on right side only
 
+Requested keymap and wiring choices are tracked in `REQUESTS.md`.
+
 ## Wiring
 
 Use this mapping exactly, or update `keyboard.toml` to match your hardware.
@@ -22,7 +24,7 @@ Use this mapping exactly, or update `keyboard.toml` to match your hardware.
 
 ### Keyboard matrix wiring (both sides, same)
 
-- Columns: `PIN_5`, `PIN_6`, `PIN_7`, `PIN_8`, `PIN_9`, `PIN_10`
+- Columns (reverse order on purpose): `PIN_10`, `PIN_9`, `PIN_8`, `PIN_7`, `PIN_6`, `PIN_5`
 - Rows: `PIN_11`, `PIN_12`, `PIN_13`, `PIN_14`, `PIN_15`
 - Diode direction: `row2col = true`
 

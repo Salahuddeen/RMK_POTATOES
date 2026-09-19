@@ -8,5 +8,5 @@ alwaysApply: true
 Before changing `keyboard.toml`, `vial.json`, or wiring docs, read `REQUESTS.md` and follow it.
 
 - Do not "fix" hardware that `REQUESTS.md` marks intentional. Column pins are reversed on purpose: `PIN_10`, `PIN_9`, `PIN_8`, `PIN_7`, `PIN_6`, `PIN_5` on both halves.
-- Do not silently revert layout extras (Colemak-DH Miryoku, Esc+1–0+Bspc number row on every layer, left Esc/Tab/Shift/Ctrl, right Alt+1/Alt+2/Alt+3).
+- Do not silently revert layout extras (Colemak-DH Miryoku, Esc+1–0+Bspc number row on every layer, left Tab/Shift/Gui/Ctrl, right Alt+1/Alt+2/Alt+3).
 - When the owner asks for a config change, update `REQUESTS.md` in the same change (new changelog entry, and replace any superseded bullet).

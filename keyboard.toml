@@ -69,16 +69,20 @@ UPaste = "WM(V,LCtrl)"
 UCopy = "WM(C,LCtrl)"
 UCut = "WM(X,LCtrl)"
 UUndo = "WM(Z,LCtrl)"
+Alt1 = "WM(Kc1,LAlt)"
+Alt2 = "WM(Kc2,LAlt)"
+Alt3 = "WM(Kc3,LAlt)"
 
 # Layer 0: Miryoku Base (Colemak-DH) + GACS home-row mods
-# Extra: traditional number row, left Esc/Tab/Shift/Ctrl, right-of-quote Backspace
+# Extra: Esc + 1-0 + Bspc number row (persists on all layers);
+# left Esc/Tab/Shift/Ctrl; right Alt+1 / Alt+2 / Alt+3
 [[keymap.layer]]
 name = "base"
 keys = """
-Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 Minus Equal
-Escape Q W F P B J L U Y Quote BackSpace
-Tab MT(A,LGui,HRM) MT(R,LAlt,HRM) MT(S,LCtrl,HRM) MT(T,LShift,HRM) G M MT(N,RShift,HRM) MT(E,RCtrl,HRM) MT(I,RAlt,HRM) MT(O,RGui,HRM) No
-LShift Z X C D V K H Comma Dot Slash No
+Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
+Escape Q W F P B J L U Y Quote @Alt1
+Tab MT(A,LGui,HRM) MT(R,LAlt,HRM) MT(S,LCtrl,HRM) MT(T,LShift,HRM) G M MT(N,RShift,HRM) MT(E,RCtrl,HRM) MT(I,RAlt,HRM) MT(O,RGui,HRM) @Alt2
+LShift Z X C D V K H Comma Dot Slash @Alt3
 LCtrl LT(media,Escape,FH) LT(nav,Space,FH) LT(mouse,Tab,FH) MouseBtn1 MouseBtn2 LT(sym,Enter,FH) LT(num,Backspace,FH) LT(fun,Delete,FH) No No No
 """
 
@@ -86,10 +90,10 @@ LCtrl LT(media,Escape,FH) LT(nav,Space,FH) LT(mouse,Tab,FH) MouseBtn1 MouseBtn2 
 [[keymap.layer]]
 name = "nav"
 keys = """
-_ _ _ _ _ _ _ _ _ _ _ _
+Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ Bootloader Reboot No No @URedo @UPaste @UCopy @UCut @UUndo No _
-_ LGui LAlt LCtrl LShift CapsWordToggle Left Down Up Right CapsWordToggle No
-_ No No No No No Insert Home PageDown PageUp End No
+_ LGui LAlt LCtrl LShift CapsWordToggle Left Down Up Right CapsWordToggle _
+_ No No No No No Insert Home PageDown PageUp End _
 _ _ _ _ _ _ Enter Backspace Delete No No No
 """
 
@@ -97,10 +101,10 @@ _ _ _ _ _ _ Enter Backspace Delete No No No
 [[keymap.layer]]
 name = "mouse"
 keys = """
-_ _ _ _ _ _ _ _ _ _ _ _
+Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ No No No No No @URedo @UPaste @UCopy @UCut @UUndo _
-_ LGui LAlt LCtrl LShift No MouseLeft MouseDown MouseUp MouseRight No No
-_ No No No No No MouseWheelLeft MouseWheelDown MouseWheelUp MouseWheelRight No No
+_ LGui LAlt LCtrl LShift No MouseLeft MouseDown MouseUp MouseRight No _
+_ No No No No No MouseWheelLeft MouseWheelDown MouseWheelUp MouseWheelRight No _
 _ _ _ _ _ _ MouseBtn1 MouseBtn3 MouseBtn2 No No No
 """
 
@@ -108,10 +112,10 @@ _ _ _ _ _ _ MouseBtn1 MouseBtn3 MouseBtn2 No No No
 [[keymap.layer]]
 name = "media"
 keys = """
-_ _ _ _ _ _ _ _ _ _ _ _
+Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ No No No No No No No No No No _
-_ LGui LAlt LCtrl LShift No MediaPrevTrack AudioVolDown AudioVolUp MediaNextTrack No No
-_ No No No No No No BrightnessDown BrightnessUp No No No
+_ LGui LAlt LCtrl LShift No MediaPrevTrack AudioVolDown AudioVolUp MediaNextTrack No _
+_ No No No No No No BrightnessDown BrightnessUp No No _
 _ _ _ _ _ _ MediaStop MediaPlayPause AudioMute No No No
 """
 
@@ -119,10 +123,10 @@ _ _ _ _ _ _ MediaStop MediaPlayPause AudioMute No No No
 [[keymap.layer]]
 name = "num"
 keys = """
-_ _ _ _ _ _ _ _ _ _ _ _
+Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ LeftBracket Kc7 Kc8 Kc9 RightBracket No No No No Bootloader _
-_ Semicolon Kc4 Kc5 Kc6 Equal No RShift RCtrl RAlt RGui No
-_ Grave Kc1 Kc2 Kc3 Backslash No No No No Reboot No
+_ Semicolon Kc4 Kc5 Kc6 Equal No RShift RCtrl RAlt RGui _
+_ Grave Kc1 Kc2 Kc3 Backslash No No No No Reboot _
 _ Dot Kc0 Minus _ _ _ _ _ No No No
 """
 
@@ -130,10 +134,10 @@ _ Dot Kc0 Minus _ _ _ _ _ No No No
 [[keymap.layer]]
 name = "sym"
 keys = """
-_ _ _ _ _ _ _ _ _ _ _ _
+Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ SHIFTED(LeftBracket) SHIFTED(Kc7) SHIFTED(Kc8) SHIFTED(RightBracket) SHIFTED(Kc9) No No No No No _
-_ SHIFTED(Semicolon) SHIFTED(Kc4) SHIFTED(Kc5) SHIFTED(Kc6) SHIFTED(Equal) No RShift RCtrl RAlt RGui No
-_ SHIFTED(Grave) SHIFTED(Kc1) SHIFTED(Kc2) SHIFTED(Kc3) SHIFTED(Backslash) No No No No No No
+_ SHIFTED(Semicolon) SHIFTED(Kc4) SHIFTED(Kc5) SHIFTED(Kc6) SHIFTED(Equal) No RShift RCtrl RAlt RGui _
+_ SHIFTED(Grave) SHIFTED(Kc1) SHIFTED(Kc2) SHIFTED(Kc3) SHIFTED(Backslash) No No No No No _
 _ SHIFTED(Kc9) SHIFTED(Kc0) SHIFTED(Minus) _ _ _ _ _ No No No
 """
 
@@ -141,10 +145,10 @@ _ SHIFTED(Kc9) SHIFTED(Kc0) SHIFTED(Minus) _ _ _ _ _ No No No
 [[keymap.layer]]
 name = "fun"
 keys = """
-_ _ _ _ _ _ _ _ _ _ _ _
+Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ F12 F7 F8 F9 PrintScreen No No No No Bootloader _
-_ F11 F4 F5 F6 ScrollLock No No No No No No
-_ F10 F1 F2 F3 Pause No No No No Reboot No
+_ F11 F4 F5 F6 ScrollLock No No No No No _
+_ F10 F1 F2 F3 Pause No No No No Reboot _
 _ Application Space Tab _ _ _ _ _ No No No
 """
 

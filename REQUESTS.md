@@ -16,10 +16,12 @@ This is the source of truth for changes the owner asked for. Read it before edit
 
 - Firmware: RMK v0.9 `keyboard.toml` syntax (`[[keymap.layer]]`, `MT(key, mod, profile)`, RMK keycodes).
 - Core: **Miryoku**, alphas **Colemak-DH**.
-- Extra number row: traditional `1 2 3 4 5 6 7 8 9 0 - =` (Shift for `!@#$%^&*()_+`).
-- Extra leftmost column: `Esc`, `Tab`, `Shift`, `Ctrl`.
-- Extra rightmost key on the top letter row (right of `'`): `Backspace`.
-- Trackball: mouse buttons on inner left thumbs; auto mouse layer on trackball motion. There are no `CpiInc` / `TrackballScroll` keycodes in RMK; CPI stays in toml.
+- Number row (persists on **every** layer): `Esc 1 2 3 4 5 6 7 8 9 0 Bspc`.
+  Shift on `1`–`0` still gives `!@#$%^&*()`. `-` and `=` live on the Num/Sym layers.
+- Extra leftmost column (letter rows): `Esc`, `Tab`, `Shift`, `Ctrl`.
+- Extra rightmost column (letter rows): `Alt+1`, `Alt+2`, `Alt+3` (`WM(Kc1,LAlt)` / `WM(Kc2,LAlt)` / `WM(Kc3,LAlt)`).
+- Trackball: mouse buttons on inner left thumbs; auto mouse layer on trackball motion.
+- Trackball sensitivity is set in toml (`cpi = 800`), not by keys.
 
 ## Changelog
 
@@ -29,5 +31,7 @@ This is the source of truth for changes the owner asked for. Read it before edit
 - Switch Miryoku alphas from QWERTY to Colemak-DH.
 - Keep a traditional number row with Shift-for-symbols.
 - Left extra column: Esc, Tab, Shift, Ctrl.
-- Right-of-quote key: Backspace.
 - Restore reversed column pin order (`PIN_10` … `PIN_5`); that wiring was intentional.
+- Wrap the number row with Esc (left) and Backspace (right); shift `1`–`0` in by one; drop `-` `=` from that row.
+- Number row is explicit on all layers (not transparent).
+- Right extra column sends Alt+1 / Alt+2 / Alt+3 instead of empty User keys.

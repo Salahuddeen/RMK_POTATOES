@@ -48,6 +48,8 @@ motion = "PIN_1"
 report_hz = 125
 cpi = 800
 smart_mode = true
+swap_xy = true
+invert_x = true
 invert_y = true
 
 [layout]

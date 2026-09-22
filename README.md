@@ -51,4 +51,4 @@ Use this mapping exactly, or update `keyboard.toml` to match your hardware.
 - Left-half keys register correctly.
 - Right-half keys register correctly.
 - Trackball movement is reported from right half.
-- If cursor direction is inverted, adjust `invert_x`, `invert_y`, or `swap_xy` in `keyboard.toml`.
+- If cursor direction is inverted, adjust `invert_x`, `invert_y`, or `swap_xy` in `keyboard.toml`. Y is already inverted (`invert_y = true`).

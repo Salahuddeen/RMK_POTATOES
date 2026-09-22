@@ -48,6 +48,7 @@ motion = "PIN_1"
 report_hz = 125
 cpi = 800
 smart_mode = true
+invert_y = true
 
 [layout]
 rows = 5
@@ -61,7 +62,7 @@ map = """
 """
 
 [keymap]
-layers = 7
+layers = 8
 
 [aliases]
 URedo = "WM(Y,LCtrl)"
@@ -75,15 +76,15 @@ Alt3 = "WM(Kc3,LAlt)"
 
 # Layer 0: Miryoku Base (Colemak-DH) + GACS home-row mods
 # Extra: Esc + 1-0 + Bspc number row (persists on all layers);
-# left Tab/Shift/Gui/Ctrl; right Alt+1 / Alt+2 / Alt+3
+# left Tab/Shift/Gui/Ctrl; right Alt+1 / Alt+2 / TG(qwerty)
 [[keymap.layer]]
 name = "base"
 keys = """
 Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 Tab Q W F P B J L U Y Quote @Alt1
 LShift MT(A,LGui,HRM) MT(R,LAlt,HRM) MT(S,LCtrl,HRM) MT(T,LShift,HRM) G M MT(N,RShift,HRM) MT(E,RCtrl,HRM) MT(I,RAlt,HRM) MT(O,RGui,HRM) @Alt2
-LGui Z X C D V K H Comma Dot Slash @Alt3
-LCtrl LT(media,Escape,FH) LT(nav,Space,FH) LT(mouse,Tab,FH) MouseBtn1 MouseBtn2 LT(sym,Enter,FH) LT(num,Backspace,FH) LT(fun,Delete,FH) No No No
+LGui Z X C D V K H Comma Dot Slash TG(qwerty)
+LCtrl LT(media,Escape,FH) LT(nav,Space,FH) LT(mouse,Tab,FH) MouseBtn1 MouseBtn2 LT(fun,LAlt,FH) LT(num,Enter,FH) LT(sym,Backspace,FH) No No No
 """
 
 # Layer 1: Miryoku Nav
@@ -150,6 +151,17 @@ _ F12 F7 F8 F9 PrintScreen No No No No Bootloader _
 _ F11 F4 F5 F6 ScrollLock No No No No No _
 _ F10 F1 F2 F3 Pause No No No No Reboot _
 _ Application Space Tab _ _ _ _ _ No No No
+"""
+
+# Layer 7: Guest QWERTY (no home-row mods, no Miryoku LTs)
+[[keymap.layer]]
+name = "qwerty"
+keys = """
+Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
+Tab Q W E R T Y U I O P @Alt1
+LShift A S D F G H J K L Semicolon @Alt2
+LGui Z X C V B N M Comma Dot Slash TG(qwerty)
+LCtrl Escape Space Tab MouseBtn1 MouseBtn2 LAlt Enter Backspace No No No
 """
 
 # Home-row mods and thumb hold-taps. See https://rmk.rs/docs/configuration/behavior

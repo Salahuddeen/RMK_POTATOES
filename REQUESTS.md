@@ -19,9 +19,12 @@ This is the source of truth for changes the owner asked for. Read it before edit
 - Number row (persists on **every** layer): `Esc 1 2 3 4 5 6 7 8 9 0 Bspc`.
   Shift on `1`–`0` still gives `!@#$%^&*()`. `-` and `=` live on the Num/Sym layers.
 - Extra leftmost column (letter rows): `Tab`, `Shift`, `Gui` (Win/Command), `Ctrl`.
-- Extra rightmost column (letter rows): `Alt+1`, `Alt+2`, `Alt+3` (`WM(Kc1,LAlt)` / `WM(Kc2,LAlt)` / `WM(Kc3,LAlt)`).
+- Extra rightmost column (letter rows): `Alt+1`, `Alt+2`, `TG(qwerty)` (guest QWERTY on/off; was Alt+3).
+- Layer 7 `qwerty`: flat QWERTY, no home-row mods or Miryoku LTs. Same extras and number row as base.
 - Trackball: mouse buttons on inner left thumbs; auto mouse layer on trackball motion.
+- Trackball Y is inverted (`invert_y = true`) so pushing the ball up moves the cursor up.
 - Trackball sensitivity is set in toml (`cpi = 800`), not by keys.
+- Right thumbs (inner three): `LT(fun,LAlt)` / `LT(num,Enter)` / `LT(sym,Backspace)` (Vial LT6+LAlt, LT4+Enter, LT5+Bspc).
 
 ## Changelog
 
@@ -36,3 +39,9 @@ This is the source of truth for changes the owner asked for. Read it before edit
 - Number row is explicit on all layers (not transparent).
 - Right extra column sends Alt+1 / Alt+2 / Alt+3 instead of empty User keys.
 - Left of the ZXCDV row is Gui (Windows / macOS Command), not Shift.
+
+### 2026-09-22
+
+- Invert trackball Y (`invert_y = true`).
+- Right thumbs: LT6/LAlt, LT4/Enter, LT5/Backspace.
+- Guest QWERTY layer 7, toggled by `TG(qwerty)` on the key right of `/`.

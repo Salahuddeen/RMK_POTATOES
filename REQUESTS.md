@@ -16,7 +16,8 @@ This is the source of truth for changes the owner asked for. Read it before edit
 
 - Firmware: RMK v0.9 `keyboard.toml` syntax (`[[keymap.layer]]`, `MT(key, mod, profile)`, RMK keycodes).
 - Core: **Miryoku**, alphas **Colemak-DH**.
-- Number row (persists on **every** layer): `Esc 1 2 3 4 5 6 7 8 9 0 Bspc`.
+- Number row (persists on **every** layer): `TG(fun) 1 2 3 4 5 6 7 8 9 0 Bspc`.
+  The top-left key toggles the Fun layer on and off. Escape remains the tap of the left media thumb.
   Shift on `1`–`0` still gives `!@#$%^&*()`. `-` and `=` live on the Num/Sym layers.
 - Extra leftmost column (letter rows): `Tab`, `Shift`, `Gui` (Win/Command), `Ctrl`.
 - Extra rightmost column (letter rows): `Alt+1`, `Alt+2`, `TG(qwerty)` (guest QWERTY on/off; was Alt+3).
@@ -24,7 +25,15 @@ This is the source of truth for changes the owner asked for. Read it before edit
 - Trackball: mouse buttons on inner left thumbs; auto mouse layer on trackball motion.
 - Trackball axes match stock ZMK (`swap_xy = true`, `invert_x = true`, `invert_y = true`) so rolling the ball up moves the cursor up, not diagonally.
 - Trackball sensitivity is set in toml (`cpi = 800`), not by keys.
-- Right thumbs (inner three): `LT(fun,LAlt)` / `LT(num,Enter)` / `LT(sym,Backspace)` (Vial LT6+LAlt, LT4+Enter, LT5+Bspc).
+- Right thumbs (inner three): `LT(glaze,LAlt)` / `LT(num,Enter)` / `LT(sym,Backspace)` (hold GLAZE CTRL, tap Left Alt; then Num+Enter, Sym+Backspace). Guest QWERTY keeps a plain `LAlt` on that thumb.
+- Layer 6 `fun`: Miryoku function keys (F1–F12, Print Screen, Scroll Lock, Pause). Toggled by top-left `TG(fun)`.
+- Layer 8 `glaze` (GLAZE CTRL): copy of Fun, held from the base right inner thumb. Left alpha block is Alt chords:
+
+  ```
+  _   Alt+I  Alt+7  Alt+8  Alt+9  Alt+Enter
+  _   Alt+O  Alt+4  Alt+5  Alt+6  Alt+Shift+Q
+  _   Alt+P  Alt+1  Alt+2  Alt+3  Alt+U
+  ```
 
 ## Changelog
 
@@ -46,3 +55,9 @@ This is the source of truth for changes the owner asked for. Read it before edit
 - Right thumbs: LT6/LAlt, LT4/Enter, LT5/Backspace.
 - Guest QWERTY layer 7, toggled by `TG(qwerty)` on the key right of `/`.
 - Trackball axes match stock ZMK: `swap_xy`, `invert_x`, and `invert_y` (replaces invert-Y-only; fixes diagonal-up).
+
+### 2026-10-26
+
+- Top-left key on every layer is `TG(fun)` instead of Escape. Escape stays on the media thumb tap.
+- Right inner thumb holds layer 8 `glaze` (GLAZE CTRL) instead of Fun: `LT(glaze, LAlt)`.
+- GLAZE CTRL copies Fun, with the left alpha block sending Alt+I/O/P, Alt+1–9, Alt+Enter, Alt+Shift+Q, and Alt+U.

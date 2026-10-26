@@ -64,7 +64,7 @@ map = """
 """
 
 [keymap]
-layers = 8
+layers = 9
 
 [aliases]
 URedo = "WM(Y,LCtrl)"
@@ -75,25 +75,37 @@ UUndo = "WM(Z,LCtrl)"
 Alt1 = "WM(Kc1,LAlt)"
 Alt2 = "WM(Kc2,LAlt)"
 Alt3 = "WM(Kc3,LAlt)"
+Alt4 = "WM(Kc4,LAlt)"
+Alt5 = "WM(Kc5,LAlt)"
+Alt6 = "WM(Kc6,LAlt)"
+Alt7 = "WM(Kc7,LAlt)"
+Alt8 = "WM(Kc8,LAlt)"
+Alt9 = "WM(Kc9,LAlt)"
+AltI = "WM(I,LAlt)"
+AltO = "WM(O,LAlt)"
+AltP = "WM(P,LAlt)"
+AltU = "WM(U,LAlt)"
+AltEnter = "WM(Enter,LAlt)"
+AltShiftQ = "WM(Q,LAlt | LShift)"
 
 # Layer 0: Miryoku Base (Colemak-DH) + GACS home-row mods
-# Extra: Esc + 1-0 + Bspc number row (persists on all layers);
+# Extra: TG(fun) + 1-0 + Bspc number row (persists on all layers);
 # left Tab/Shift/Gui/Ctrl; right Alt+1 / Alt+2 / TG(qwerty)
 [[keymap.layer]]
 name = "base"
 keys = """
-Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
+TG(fun) Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 Tab Q W F P B J L U Y Quote @Alt1
 LShift MT(A,LGui,HRM) MT(R,LAlt,HRM) MT(S,LCtrl,HRM) MT(T,LShift,HRM) G M MT(N,RShift,HRM) MT(E,RCtrl,HRM) MT(I,RAlt,HRM) MT(O,RGui,HRM) @Alt2
 LGui Z X C D V K H Comma Dot Slash TG(qwerty)
-LCtrl LT(media,Escape,FH) LT(nav,Space,FH) LT(mouse,Tab,FH) MouseBtn1 MouseBtn2 LT(fun,LAlt,FH) LT(num,Enter,FH) LT(sym,Backspace,FH) No No No
+LCtrl LT(media,Escape,FH) LT(nav,Space,FH) LT(mouse,Tab,FH) MouseBtn1 MouseBtn2 LT(glaze,LAlt,FH) LT(num,Enter,FH) LT(sym,Backspace,FH) No No No
 """
 
 # Layer 1: Miryoku Nav
 [[keymap.layer]]
 name = "nav"
 keys = """
-Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
+TG(fun) Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ Bootloader Reboot No No @URedo @UPaste @UCopy @UCut @UUndo No _
 _ LGui LAlt LCtrl LShift CapsWordToggle Left Down Up Right CapsWordToggle _
 _ No No No No No Insert Home PageDown PageUp End _
@@ -104,7 +116,7 @@ _ _ _ _ _ _ Enter Backspace Delete No No No
 [[keymap.layer]]
 name = "mouse"
 keys = """
-Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
+TG(fun) Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ No No No No No @URedo @UPaste @UCopy @UCut @UUndo _
 _ LGui LAlt LCtrl LShift No MouseLeft MouseDown MouseUp MouseRight No _
 _ No No No No No MouseWheelLeft MouseWheelDown MouseWheelUp MouseWheelRight No _
@@ -115,7 +127,7 @@ _ _ _ _ _ _ MouseBtn1 MouseBtn3 MouseBtn2 No No No
 [[keymap.layer]]
 name = "media"
 keys = """
-Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
+TG(fun) Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ No No No No No No No No No No _
 _ LGui LAlt LCtrl LShift No MediaPrevTrack AudioVolDown AudioVolUp MediaNextTrack No _
 _ No No No No No No BrightnessDown BrightnessUp No No _
@@ -126,7 +138,7 @@ _ _ _ _ _ _ MediaStop MediaPlayPause AudioMute No No No
 [[keymap.layer]]
 name = "num"
 keys = """
-Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
+TG(fun) Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ LeftBracket Kc7 Kc8 Kc9 RightBracket No No No No Bootloader _
 _ Semicolon Kc4 Kc5 Kc6 Equal No RShift RCtrl RAlt RGui _
 _ Grave Kc1 Kc2 Kc3 Backslash No No No No Reboot _
@@ -137,7 +149,7 @@ _ Dot Kc0 Minus _ _ _ _ _ No No No
 [[keymap.layer]]
 name = "sym"
 keys = """
-Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
+TG(fun) Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ SHIFTED(LeftBracket) SHIFTED(Kc7) SHIFTED(Kc8) SHIFTED(RightBracket) SHIFTED(Kc9) No No No No No _
 _ SHIFTED(Semicolon) SHIFTED(Kc4) SHIFTED(Kc5) SHIFTED(Kc6) SHIFTED(Equal) No RShift RCtrl RAlt RGui _
 _ SHIFTED(Grave) SHIFTED(Kc1) SHIFTED(Kc2) SHIFTED(Kc3) SHIFTED(Backslash) No No No No No _
@@ -148,7 +160,7 @@ _ SHIFTED(Kc9) SHIFTED(Kc0) SHIFTED(Minus) _ _ _ _ _ No No No
 [[keymap.layer]]
 name = "fun"
 keys = """
-Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
+TG(fun) Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 _ F12 F7 F8 F9 PrintScreen No No No No Bootloader _
 _ F11 F4 F5 F6 ScrollLock No No No No No _
 _ F10 F1 F2 F3 Pause No No No No Reboot _
@@ -159,11 +171,22 @@ _ Application Space Tab _ _ _ _ _ No No No
 [[keymap.layer]]
 name = "qwerty"
 keys = """
-Escape Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
+TG(fun) Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
 Tab Q W E R T Y U I O P @Alt1
 LShift A S D F G H J K L Semicolon @Alt2
 LGui Z X C V B N M Comma Dot Slash TG(qwerty)
 LCtrl Escape Space Tab MouseBtn1 MouseBtn2 LAlt Enter Backspace No No No
+"""
+
+# Layer 8: GLAZE CTRL (held from the right inner thumb; Fun's left alpha block as Alt chords)
+[[keymap.layer]]
+name = "glaze"
+keys = """
+TG(fun) Kc1 Kc2 Kc3 Kc4 Kc5 Kc6 Kc7 Kc8 Kc9 Kc0 BackSpace
+_ @AltI @Alt7 @Alt8 @Alt9 @AltEnter No No No No Bootloader _
+_ @AltO @Alt4 @Alt5 @Alt6 @AltShiftQ No No No No No _
+_ @AltP @Alt1 @Alt2 @Alt3 @AltU No No No No Reboot _
+_ Application Space Tab _ _ _ _ _ No No No
 """
 
 # Home-row mods and thumb hold-taps. See https://rmk.rs/docs/configuration/behavior
